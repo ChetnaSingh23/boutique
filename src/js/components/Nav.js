@@ -1,4 +1,5 @@
 import React from 'react';
+import LoginPage from '../pages/LoginPage';
 
 class Nav extends React.Component {
     navigate() {
@@ -36,31 +37,9 @@ class Nav extends React.Component {
                   <a class="nav-link"href="#/women">Women FASHION</a>
                 </li>
                 <li class="nav-item">
-                   <button class="btn btn-danger" type="button"  data-toggle="modal" data-target="#myModal">Register/login</button>
+                  <LoginPage/>
                 </li>
                 </ul>
-                <div class="modal fade" id="myModal">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                    
-                      {/*!-- Modal Header -->*/}
-                      <div class="modal-header">
-                        <h4 class="modal-title">Modal Heading</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      </div>
-                      
-                      <div class="modal-body">
-                        Modal body..
-                      </div>
-                      
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-success" onClick={this.onRegister}>Register</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                      </div>
-                      
-                    </div>
-                  </div>
-                </div>
           </nav>)
     }
 }
