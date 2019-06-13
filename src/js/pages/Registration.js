@@ -25,9 +25,7 @@ class Registration extends React.Component {
 
 	}
 	onInputChange(data,name){
-		if(name === 'firstName'){
-			this.setState({firstName : data }) //TASK FOR SETTING STATE OF THE FORM ELEMNTS
-		}
+		this.setState({[name] : data })
 	}
 
     render() {
