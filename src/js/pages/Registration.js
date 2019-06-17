@@ -25,7 +25,7 @@ class Registration extends React.Component {
 
 	}
 	onInputChange(data,name){
-		this.setState({[name] : data })
+		this.setState({[name] : data });
 	}
 
     render() {

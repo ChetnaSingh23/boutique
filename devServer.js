@@ -33,6 +33,36 @@ var employees = [
         image: "https://images.unsplash.com/photo-1496857239036-1fb137683000?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"   
     }
 ];
+
+const botique_women = [
+    {
+        product_name:"kurti",
+        product_image: "https://images-na.ssl-images-amazon.com/images/I/81FQXxrH2HL._UY445_.jpg",
+        available_sizes:["xs", "s", "m", "l", "xl"],
+        price: 250,
+        colour: "red multicolour",
+        material: "cotton",
+        product_availability: true,
+        availability_count:10
+    },
+    {
+        product_name:"kurti",
+        product_image: "https://5.imimg.com/data5/WS/OI/MY-479445/designer-kurtis-500x500.jpg",
+        available_sizes:["xs", "s", "m", "l", "xl"],
+        price: 500,
+        colour: "dark blue",
+        material: "cotton",
+        product_availability: true,
+        availability_count:10
+    }
+];
+
+const user = {
+    firstName: "John",
+    lastName: "Doe",
+    email: "john.doe@gmail.com"
+}
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -50,10 +80,18 @@ app.post('/addemployee', function(req, res) {
     var nextId = Math.max.apply(Math, allIds) + 1;
     console.log(req.body);
 });
-app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'index.html'));
+app.get('/women', function(req,res) {
+    console.log(`getting women products, ${req}, ${res}`);
+    res.send(botique_women);
+    
 });
-
+app.get('/user', (req,res) => {
+    console.log('getting user profile', req, res);
+    res.send(user);
+});
+app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, './src/index.html'));
+});
 app.listen(3000, 'localhost', function (err) {
     if (err) {
         console.log(err);

@@ -9,6 +9,7 @@ class Nav extends React.Component {
       alert("hey regs÷ter")
     }
     render() {
+      console.log("inside nav",this.props);
         return (
           <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
           <a class="navbar-brand" href="#">Logo</a>
@@ -38,6 +39,9 @@ class Nav extends React.Component {
                 </li>
                 <li class="nav-item">
                   <LoginPage/>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#/profile">Profile</a>
                 </li>
                 </ul>
           </nav>)

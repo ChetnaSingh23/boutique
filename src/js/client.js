@@ -12,6 +12,7 @@ import Employees from './pages/Employees';
 import EmployeeProfile from './pages/EmployeeProfile';
 import Contact from './pages/Contact';
 import Women from './pages/Women';
+import UserProfile from './pages/UserProfile';
 
 import reducers from './reducers';
 
@@ -21,6 +22,7 @@ const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
 
 ReactDOM.render(
+    //console.log("inside client js");
 <Provider store={createStoreWithMiddleware(reducers)}>
     <Router history={hashHistory}>
         <Route path="/" component={Layout}>
@@ -30,6 +32,7 @@ ReactDOM.render(
             <Route name="employee" path="employee/:id" component={EmployeeProfile}></Route>            
             <Route path="contact" component={Contact}></Route>
             <Route path="women" component={Women}></Route>
+            <Route path="profile" component={UserProfile}></Route>
         </Route>
     </Router>
  </Provider>
