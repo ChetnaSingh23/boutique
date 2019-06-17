@@ -1,18 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {  } from '../actions/index';
+import { getUserProfile } from '../actions/index';
 import { bindActionCreators } from 'redux';
 import ProductList from './ProductList';
 
 class UserProfile extends React.Component {
   componentDidMount(){
-    this.props.getWomenData();
+    this.props.getUserProfile();
     console.log("component mounted");
   }
   render(){
-    console.log('response in parent component',this.props.women);
+    console.log('response in parent component',this.props.user);
         return <div>
-           
+           <h1>User Profile</h1>
         </div>
   }
 }
